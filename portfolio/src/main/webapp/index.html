@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +34,12 @@
         gtag('config', 'UA-147583262-1');
     </script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQQZEl8PmqR4ErryniAxuUvtHbV3T43v4"></script>
+    <script src="js/comments.js"></script>
+    
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="createMap();">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -432,7 +436,24 @@
                 <br>
                 <div id="quote-container"></div>
                 <br>
+                <h3>Comments</h3>
+                <br>
                 <div id="comments-container"></div>
+                <br>
+
+                <h4>Write a comment:</h4>
+
+                <form action="/text" method="POST">
+                <textarea name="text-input">Your comment.</textarea>
+                <br>
+                <input type="submit" onclick="doPost()"/>
+                </form>
+
+                <h1>Google Maps</h1>
+                <div id="map"></div>
+                <p>This page shows a Google Map!</p>
+    
+                
             </div>
         </section>
 
@@ -456,8 +477,8 @@
     <script src="js/quote.js"></script>
 
     <!-- Comments Script -->
-    <script src="js/comments.js"></script>
     <script>getComments()</script>
+
 
 </body>
 
